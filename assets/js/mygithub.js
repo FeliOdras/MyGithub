@@ -38,7 +38,7 @@ class MyGithub {
 
         return repoList.map(repo => {
             var liveProjectLink
-            repo.homepage != null ? liveProjectLink = `<div id="liveAppLink"><a href=${repo.homepage}>View live Application</a></div>` : liveProjectLink = `<div id="liveAppLink"> No live application available </div>`
+            repo.homepage != null ? liveProjectLink = `<div id="liveAppLink"><a href="${repo.homepage}">View live application</a></div>` : liveProjectLink = `<div id="liveAppLink"> No live application available </div>`
             return `
             <div class="flexbox border m-1 p-2">
             <div id="repoName"> ${repo.name}</div>

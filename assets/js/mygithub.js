@@ -34,16 +34,18 @@ class MyGithub {
 
     template() {
         let repoList = this.data;
-        console.log(repoList)
 
         return repoList.map(repo => {
-            var liveProjectLink
-            repo.homepage != null ? liveProjectLink = `<div id="liveAppLink"><a href="${repo.homepage}">View live application</a></div>` : liveProjectLink = `<div id="liveAppLink"> No live application available </div>`
+            let liveProjectLink
+            repo.homepage != null ? liveProjectLink = `<a href="${repo.homepage}">View live application</a>` : liveProjectLink = `No live application available`
+            let repoDescription
+            repo.description != null ? repoDescription = `${repo.description}` : repoDescription = `No description available`
             return `
-            <div class="flexbox border m-1 p-2">
+            <div class="flexbox border m-1 p-2 w-25">
             <div id="repoName"> ${repo.name}</div>
+            <div id="repoDescription">${repoDescription}</div>
             <div id="repoLink"><a href="${repo.html_url}"> View repository on GitHub</a></div>
-            ${liveProjectLink}
+            <div id="liveAppLink">${liveProjectLink}</div>
             </div>
             `
         }).join('')
@@ -59,9 +61,7 @@ class MyGithub {
         output += template;
         output += `</div>`
         this.htmlContainer.innerHTML = output;
-        console.log(output);
     }
 }
 
 const myGithubRepos = new MyGithub("#myGithubOutput");
-console.log(myGithubRepos);

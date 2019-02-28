@@ -31,11 +31,31 @@ class MyGithub {
             });
     }
 
+    searchUser() {
+        this.githubUser = document.querySelector('#search-field').value;
+        this.apiUrl = `https://api.github.com/users/${
+      this.githubUser
+    }/repos?client_id=fd294f0cd34bb0c9d185&client_secret=5429a69b75c88ca46305aafd53715532c56e9abf`;
+        this.userApiUrl = `https://api.github.com/users/${
+      this.githubUser
+    }?client_id=fd294f0cd34bb0c9d185&client_secret=5429a69b75c88ca46305aafd53715532c56e9abf`;
+        console.log(this.githubUser)
+        console.log(this.apiUrl)
+        this.requestData();
+        this.requestUserData();
+    }
+
+    addEventListeners() {
+        const searchButton = document.querySelector('#search-button');
+        searchButton.addEventListener('click', () => this.searchUser());
+    }
+
     createHeader() {
         let user = this.userData;
         let userLocation;
         user.location != null ?
-            (userLocation = `<div id="userLocation">${user.location}</div>`) :
+            (userLocation = ` <div id = "userLocation" > ${
+                user.location} </div>`) :
             (userLocation = ``);
         let userBio;
         user.bio != null ?
@@ -96,11 +116,12 @@ class MyGithub {
         let user = this.userData;
         const template = this.template();
         const flexboxLayoutTop = `<div class="d-flex flex-wrap justify-content-around">`;
-        output += `<h2>${user.login}'s repositories</h2>`
+        output += `<h2>${this.githubUser}'s repositories</h2>`
         output += flexboxLayoutTop;
         output += template;
         output += `</div>`;
         this.htmlContainer.innerHTML = output;
+        this.addEventListeners()
     }
 }
 

@@ -51,11 +51,13 @@ class MyGithub {
       : (userBio = ``);
     let userDataOutput = `
     <div class="jumbotron text-center">
-    <div id="userAvatar" ><img class="img-thumbnail rounded-circle" src="${
+    <div id="userAvatar" class="m-4"><img class="img-thumbnail rounded-circle" src="${
       user.avatar_url
     }"></div>
     <div id="userLogin" class="font-weight-bold">${user.login} </div>
-    <div class="text-muted">(${user.public_repos} public repositories)</div>
+    <div class="text-muted small">(${
+      user.public_repos
+    } public repositories)</div>
     <div id="userName">${user.name}</div>
     <div id="userLocation">${userLocation}</div>
     <div id="userBio">${userBio}</div>

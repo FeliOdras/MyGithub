@@ -306,8 +306,30 @@ template {
   display: none; }
 
 @primary : #ffa300;
+#myGithubOutput {
+  background-image: url(../images/coding.jpg);
+  background-position: 50%;
+  background-size: cover; }
+
 .w-120px {
   width: 120px; }
 
 .w-240px {
   width: 240px; }
+
+.w-45 {
+  width: 45%; }
+
+.bg-light-yellow {
+  background-color: #fdef9e; }
+
+.bg-tertiary {
+  background-color: #fd7e14; }
+  .bg-tertiary:hover {
+    background-color: #c95e00; }
+
+.h2-title {
+  background-color: rgba(111, 111, 111, 0.5); }
+
+h3.repoName {
+  font-size: 1.2rem; }

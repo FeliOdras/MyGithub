@@ -60,7 +60,7 @@ class MyGithub {
             (userBio = `<div id="userLocation">${user.bio}</div>`) :
             (userBio = ``);
         let userDataOutput = `
-    <div class="jumbotron text-left bg-secondary text-white p-3 clearfix">
+    <div class="jumbotron text-left bg-secondary text-white p-3 m-0 clearfix">
     <div id="userAvatar" class="mr-4 p-3 text-center float-left border w-240px"><img class="img-thumbnail mb-3 rounded-circle" src="${
       user.avatar_url
     }"><br>
@@ -87,22 +87,25 @@ class MyGithub {
             .map(repo => {
                 let liveProjectLink;
                 repo.homepage != null ?
-                    (liveProjectLink = `<a href="${
+                    (liveProjectLink = `<button class="bg-danger rounded small w-45 float-right border-0"><a class="text-white text-decoration-none" href="${
               repo.homepage
-            }">View live application</a>`) :
-                    (liveProjectLink = `<span class="not-available">No live application available</span>`);
+            }">View live application</a></button>`) :
+                    (liveProjectLink = `<button class="not-available small w-45 text-white rounded border-0 float-right">No live application </button>`);
                 let repoDescription;
                 repo.description != null ?
                     (repoDescription = `${repo.description}`) :
-                    (repoDescription = `<span class="not-available">No description available</span>`);
+                    (repoDescription = `<span class="not-available font-italic">No description available</span>`);
                 return `
-            <div class="flexbox border m-1 p-2 w-240px">
-            <div class="repoName"> ${repo.name}</div>
-            <div class="repoDescription">${repoDescription}</div>
-            <div class="repoLink"><a href="${
+            <div class="flexbox border m-1 w-240px bg-light-yellow">
+            <h3 class="repoName p-1 bg-warning text-light text-center font-weight-bold"> ${repo.name}</h3>
+            <div class="p-2 clearfix">
+            <div class="repoDescription small text-muted">${repoDescription}</div>
+            <hr class="mt-2 mb-2">
+            <div class="repoLink"><button class="float-left bg-tertiary small border-0 w-45 d-inline rounded"><a class="text-white text-decoration-none" href="${
               repo.html_url
-            }"> View repository on GitHub</a></div>
+            }"> View repository on GitHub</a></button></div>
             <div class="liveAppLink">${liveProjectLink}</div>
+            </div>
             </div>
             `;
             })
@@ -114,7 +117,7 @@ class MyGithub {
         let user = this.userData;
         const template = this.template();
         const flexboxLayoutTop = `<div class="d-flex flex-wrap justify-content-around">`;
-        output += `<h2>${this.githubUser}'s repositories</h2>`
+        output += `<h2 class="h2-title pl-2 pr-2 pt-2 text-white pb-1 font-weight-bold">${this.githubUser}'s repositories</h2>`
         output += flexboxLayoutTop;
         output += template;
         output += `</div>`;

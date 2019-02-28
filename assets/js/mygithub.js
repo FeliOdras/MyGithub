@@ -11,7 +11,6 @@ class MyGithub {
     }?client_id=fd294f0cd34bb0c9d185&client_secret=5429a69b75c88ca46305aafd53715532c56e9abf`;
     this.requestData();
     this.requestUserData();
-    // this.render()
   }
 
   requestData() {
@@ -45,11 +44,11 @@ class MyGithub {
     let user = this.userData;
     let userLocation;
     user.location != null
-      ? (userLocation = `<div id="userLocation">${user.location}`)
+      ? (userLocation = `<div id="userLocation">${user.location}</div>`)
       : (userLocation = ``);
     let userBio;
     user.bio != null
-      ? (userBio = `<div id="userLocation">${user.bio}`)
+      ? (userBio = `<div id="userLocation">${user.bio}</div>`)
       : (userBio = ``);
     let userDataOutput = `
     <div id="userAvatar"><img src="${user.avatar_url}"></div>
@@ -79,11 +78,11 @@ class MyGithub {
           ? (liveProjectLink = `<a href="${
               repo.homepage
             }">View live application</a>`)
-          : (liveProjectLink = `No live application available`);
+          : (liveProjectLink = `<span class="not-available">No live application available</span>`);
         let repoDescription;
         repo.description != null
           ? (repoDescription = `${repo.description}`)
-          : (repoDescription = `No description available`);
+          : (repoDescription = `<span class="not-available">No description available</span>`);
         return `
             <div class="flexbox border m-1 p-2 w-25">
             <div id="repoName"> ${repo.name}</div>
@@ -100,10 +99,8 @@ class MyGithub {
 
   render() {
     let output = "";
-    const header = ``;
     const template = this.template();
     const flexboxLayoutTop = `<div class="d-flex flex-wrap justify-content-around">`;
-    output += header;
     output += flexboxLayoutTop;
     output += template;
     output += `</div>`;

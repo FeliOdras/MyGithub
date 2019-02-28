@@ -51,7 +51,9 @@ class MyGithub {
       : (userBio = ``);
     let userDataOutput = `
     <div class="jumbotron text-center">
-    <div id="userAvatar"><img src="${user.avatar_url}"></div>
+    <div id="userAvatar" ><img class="img-thumbnail rounded-circle" src="${
+      user.avatar_url
+    }"></div>
     <div id="userLogin">${user.login} (${
       user.public_repos
     } public repositories)</div>

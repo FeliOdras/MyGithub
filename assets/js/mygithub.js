@@ -52,12 +52,12 @@ class MyGithub {
         let user = this.userData;
         let userLocation;
         user.location != null ?
-            (userLocation = ` <div id = "userLocation" > ${
+            (userLocation = ` <div id = "userLocation" > <i class="fas fa-compass mr-2"></i>${
                 user.location} </div>`) :
             (userLocation = ``);
         let userBio;
         user.bio != null ?
-            (userBio = `<div id="userLocation">${user.bio}</div>`) :
+            (userBio = `<div id="userBio">${user.bio}</div>`) :
             (userBio = ``);
         let userDataOutput = `
     <div class="jumbotron text-left bg-secondary text-white p-3 m-0 clearfix">
@@ -72,10 +72,10 @@ class MyGithub {
     <div class="text-light font-italic small">(${
       user.public_repos
     } public repositories)</div>
-    <div id="userName" class="mt-3">${user.name}</div>
-    <div id="userLocation">${userLocation}</div>
-    <button id="followers" class="bg-warning d-inline p-1 small rounded border-0"><a href="https://github.com/${this.githubUser}?tab=followers" target="_blank" class="text-white text-decoration-none">Followers: ${user.followers}</button>
-    <button id="following" class="bg-warning d-inline p-1 small rounded border-0"><a href="https://github.com/${this.githubUser}?tab=following" target="_blank" class="text-white text-decoration-none">Following: ${user.following}</button>
+    <div id="userName" class="mt-3 mb-1"><i class="fas fa-user mr-2"></i> ${user.name}</div>
+    <div id="userLocation" class="mb-1">${userLocation}</div>
+    <button id="followers" class="bg-tertiary d-inline p-1 small rounded border-0"><a href="https://github.com/${this.githubUser}?tab=followers" target="_blank" class="text-white text-decoration-none">Followers: ${user.followers}</button>
+    <button id="following" class="bg-tertiary d-inline p-1 small rounded border-0"><a href="https://github.com/${this.githubUser}?tab=following" target="_blank" class="text-white text-decoration-none">Following: ${user.following}</button>
     </div> `;
         document.querySelector("#myGithubUser").innerHTML = userDataOutput;
     }

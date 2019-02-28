@@ -50,7 +50,7 @@ class MyGithub {
       ? (userBio = `<div id="userLocation">${user.bio}</div>`)
       : (userBio = ``);
     let userDataOutput = `
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
     <div id="userAvatar"><img src="${user.avatar_url}"></div>
     <div id="userLogin">${user.login} (${
       user.public_repos

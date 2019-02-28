@@ -50,6 +50,7 @@ class MyGithub {
       ? (userBio = `<div id="userLocation">${user.bio}</div>`)
       : (userBio = ``);
     let userDataOutput = `
+    <div class="jumbotron">
     <div id="userAvatar"><img src="${user.avatar_url}"></div>
     <div id="userLogin">${user.login} (${
       user.public_repos
@@ -62,7 +63,8 @@ class MyGithub {
     }" target="_blank">Followers: ${user.followers}</div>
     <div id="following"><a href="${
       user.following_url
-    }" target="_blank">Followers: ${user.following}</div> `;
+    }" target="_blank">Followers: ${user.following}</div>
+    </div> `;
     document.querySelector("#myGithubUser").innerHTML = userDataOutput;
   }
 

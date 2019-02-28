@@ -87,12 +87,12 @@ class MyGithub {
                     (repoDescription = `<span class="not-available">No description available</span>`);
                 return `
             <div class="flexbox border m-1 p-2 w-240px">
-            <div id="repoName"> ${repo.name}</div>
-            <div id="repoDescription">${repoDescription}</div>
-            <div id="repoLink"><a href="${
+            <div class="repoName"> ${repo.name}</div>
+            <div class="repoDescription">${repoDescription}</div>
+            <div class="repoLink"><a href="${
               repo.html_url
             }"> View repository on GitHub</a></div>
-            <div id="liveAppLink">${liveProjectLink}</div>
+            <div class="liveAppLink">${liveProjectLink}</div>
             </div>
             `;
             })

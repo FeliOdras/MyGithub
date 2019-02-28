@@ -31,14 +31,6 @@ class MyGithub {
             });
     }
 
-    //   fetch(this.userApiUrl)
-    //       .then(response => response.json())
-    //       .then(userData => {
-    //         this.data = userData;
-    //         this.render();
-    //       });
-    //   }
-
     createHeader() {
         let user = this.userData;
         let userLocation;

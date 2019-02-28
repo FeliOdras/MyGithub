@@ -39,8 +39,6 @@ class MyGithub {
         this.userApiUrl = `https://api.github.com/users/${
       this.githubUser
     }?client_id=fd294f0cd34bb0c9d185&client_secret=5429a69b75c88ca46305aafd53715532c56e9abf`;
-        console.log(this.githubUser)
-        console.log(this.apiUrl)
         this.requestData();
         this.requestUserData();
     }

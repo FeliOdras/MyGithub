@@ -27,7 +27,6 @@ class MyGithub {
       .then(response => response.json())
       .then(userData => {
         this.userData = userData;
-        console.log(userData);
         this.createHeader();
       });
   }
@@ -64,7 +63,6 @@ class MyGithub {
     <div id="following"><a href="${
       user.following_url
     }" target="_blank">Followers: ${user.following}</div> `;
-    console.log(userDataOutput);
     document.querySelector("#myGithubUser").innerHTML = userDataOutput;
   }
 

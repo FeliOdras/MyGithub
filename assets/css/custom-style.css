@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url(../../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../../node_modules/font-awesome/css/font-awesome.min.css);
 html {
   line-height: 1.15;
   /* 1 */
@@ -303,3 +304,10 @@ template {
    */
 [hidden] {
   display: none; }
+
+@primary : #ffa300;
+.w-120px {
+  width: 120px; }
+
+.w-240px {
+  width: 240px; }

@@ -118,7 +118,7 @@ class MyGithub {
         let output = "";
         let user = this.userData;
         const template = this.template();
-        const flexboxLayoutTop = `<div class="d-flex flex-wrap justify-content-around">`;
+        const flexboxLayoutTop = `<div class="d-flex flex-wrap justify-content-around pb-5">`;
         output += `<h2 class="h2-title pl-2 pr-2 pt-2 text-white pb-1 font-weight-bold">${this.githubUser}'s repositories</h2>`
         output += flexboxLayoutTop;
         output += template;

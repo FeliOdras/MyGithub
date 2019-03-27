@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My Github</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/custom-style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/custom-style.css" />
+  </head>
 
-<body>
+  <body>
     <header class="bg-dark text-light clearfix">
-        <h1 class="p-0 m-0 d-inline-block"><i class="fa fa-github"></i> <span class="text-warning small font-weight-bold">My
-                Github</span></h1>
-        <div class="float-right mr-2 mt-1">
-            <input type="text" name="search-field" id="search-field" class="">
-            <button id="search-button" class="border-0 p-1 small font-weight-bold rounded btn-warning text-light">Search
-                for other user</button>
-        </div>
+      <h1 class="p-0 m-0 d-inline-block">
+        <i class="fa fa-github"></i>
+        <span class="text-warning small font-weight-bold">My Github</span>
+      </h1>
+      <div class="float-right mr-2 mt-1">
+        <input type="text" name="search-field" id="search-field" class="" />
+        <button
+          id="search-button"
+          class="border-0 p-1 small font-weight-bold rounded btn-warning text-light"
+        >
+          Search for other user
+        </button>
+      </div>
     </header>
-    <div id="myGithubUser"></div>
-    <div id="myGithubOutput"></div>
+    <main>
+      <div id="myGithubUser"></div>
+      <div id="myGithubOutput"></div>
+    </main>
+    <footer class="bg-secondary text-light">
+      Created by <a href="https://playground.odras.de">Ari</a> @ DCI
+      <span class="hotpink">#hotpink</span>
+    </footer>
     <script src="assets/js/mygithub.js"></script>
-</body>
-
+  </body>
 </html>

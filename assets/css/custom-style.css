@@ -333,3 +333,23 @@ template {
 
 h3.repoName {
   font-size: 1.2rem; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 35px;
+  background-color: #111;
+  font-size: .7rem;
+  padding: 5px; }
+  footer .hotpink {
+    background-color: hotpink;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 5px;
+    font-family: 'Pacifico', cursive;
+    font-size: .9rem;
+    float: right; }
+  footer a {
+    color: #eee; }
